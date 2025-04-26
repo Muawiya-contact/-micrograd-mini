@@ -24,7 +24,8 @@ micrograd-mini/
     ├── engine.py # Core autodiff engine (Value class)
     ├── nn.py # Neural network components
     ├── train.py # Training loop for XOR
-    └── README.md # Project info
+    ├── example.py # Better example using XOR dataset 
+└── README.md # Project info
 ```
 
 ---
@@ -42,16 +43,24 @@ micrograd-mini/
 python train.py
 ```
 # 📈 Example Output
-After 1000 training epochs, you’ll see predictions for XOR:
 ```
-[0.0, 0.0] => 0.01
-[0.0, 1.0] => 0.98
-[1.0, 0.0] => 0.97
-[1.0, 1.0] => 0.03
+--- Final Predictions after Training ---
+
+Input: [0.0, 0.0] => Predicted: 0.01 | Target: 0.0
+Input: [0.0, 1.0] => Predicted: 0.98 | Target: 1.0
+Input: [1.0, 0.0] => Predicted: 0.97 | Target: 1.0
+Input: [1.0, 1.0] => Predicted: 0.03 | Target: 0.0
+
+Training complete! 🎯
 ```
 # 🧠 Learn by Building
-Want to really understand backpropagation and gradients? Dive into engine.py and see how the Value class works. You’ll see the entire gradient graph built and traversed by hand — just like how real autodiff frameworks work under the hood!
+Want to really understand backpropagation and gradients?
 
++ Dive into engine.py and explore the Value class
+
++ Inspect how operations dynamically build a graph
+
++ See how .backward() traverses it for gradient computation — just like real frameworks!
 ## 🙏 Attribution
 
 This project is heavily inspired by [micrograd](https://github.com/karpathy/micrograd) by Andrej Karpathy, licensed under the MIT License.
